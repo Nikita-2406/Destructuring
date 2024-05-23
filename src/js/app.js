@@ -1,6 +1,13 @@
-// TODO: write your code here
-import sum from './basic';
-
-console.log('worked');
-
-console.log(sum([1, 2]));
+export default function getPersonParams(obj) {
+  const ans = [];
+  for (let elem of obj.special) {
+    const { id, name, icon, description = "Описание недоступно" } = elem;
+    ans.push({
+      id: id,
+      name: name,
+      icon: icon,
+      description: description,
+    });
+  }
+  return ans;
+}
